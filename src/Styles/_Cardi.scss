@@ -1,0 +1,68 @@
+.cardi {
+  // width: 90%;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title  {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    color: #fff;
+  }
+
+  &__select {
+    color: #fff !important;  
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    padding-top: 40px;
+    height: 450px;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    width: 220px;
+    padding: 0 42px 24px;
+    background: #1F1D2B;
+    border-radius: 16px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &__img {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    bottom: 40px;
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #fff;
+  }
+  &__cent {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  &__bowl {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #ABBBC2;
+  }
+}
