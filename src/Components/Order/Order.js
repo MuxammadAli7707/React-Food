@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import deletes from "../../assets/Image/delete.svg";
 import Modal from "./Modal/Modal";
 
 function Order({ setWishlist, wishlist }) {
-  let [block, setBlock] = useState(false);
+  let [blocking, setBlocking] = useState(false);
   let mopenHandler = () => {
-    setBlock(!block);
+    setBlocking(!blocking);
   };
 
   let deleteHandler = (e) => {
     let idd = e.target.id;
-    setWishlist(wishlist.filter((item) => item.id !== idd));
+    setWishlist(wishlist.filter((item) => item.id !== +idd));
   };
+
+  let [changed, setChanged] = useState([]);
+  let [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    let num = 0;
+    wishlist.forEach(element => {
+      num += element.money;
+    });
+    setTotal(num); 
+
+    let temp = [...new Set(wishlist.map(item => item))];
+    setChanged(temp);
+  }, [wishlist]);
+
   return (
     <div className="order">
       <h3 className="order__title">Orders #34562</h3>
@@ -37,9 +52,9 @@ function Order({ setWishlist, wishlist }) {
       </div>
 
       <ul className="order__list">
-        {wishlist.map((item, key) => {
+        {changed.map((item, key) => {
           return (
-            <li className="order__itm">
+            <li key={key+33} className="order__itm">
               <div className="order__wrapper">
                 <div className="order__info">
                   <div className="order__imgbox">
@@ -50,7 +65,7 @@ function Order({ setWishlist, wishlist }) {
                     </div>
                   </div>
                   <div className="order__number">
-                    <span className="order__cost">{item.theRest}</span>
+                    <span className="order__cost">{item.num}</span>
                   </div>
                 </div>
                 <div>
@@ -62,13 +77,14 @@ function Order({ setWishlist, wishlist }) {
                 </div>
               </div>
               <div className="order__counts">
-                <span className="order__counting">{item.money}</span>
+                <span className="order__counting">{(item.money * item.num).toFixed(2)}</span>
                 <button
                   onClick={deleteHandler}
                   id={item.id}
                   className="order__del"
                 >
-                  <i className="bx bx-trash-alt"></i>
+                  <i onClick={deleteHandler}
+                  id={item.id} className="bx bx-trash-alt"></i>
                 </button>
               </div>
             </li>
@@ -83,14 +99,14 @@ function Order({ setWishlist, wishlist }) {
         </div>
         <div className="order__total">
           <p className="order__discount">Sub total</p>
-          <span>$ 21,03</span>
+          <span>$ {total.toFixed(2)}</span>
         </div>
 
         <button onClick={mopenHandler} className="order__button">
           Continue to Payment
         </button>
       </div>
-      <Modal block={block} setBlock={setBlock} />
+      <Modal blocking={blocking} setBlocking={setBlocking} />
     </div>
   );
 }

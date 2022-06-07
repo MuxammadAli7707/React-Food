@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Foods from '../../Foods/Foods';
 import Main from '../Main/Main';
 import Nav from '../Nav/Nav';

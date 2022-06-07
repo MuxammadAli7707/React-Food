@@ -139,6 +139,12 @@
     color: #FF7CA3;
     border-radius: 8px;
     background-color: transparent;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background-color: #EA7C69;
+      color: #fff;
+    }
   }
 
   &__discountbox {

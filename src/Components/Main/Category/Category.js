@@ -16,6 +16,17 @@ function Category({ Obj, setContent }) {
       setContent(Obj.filter(item => item.foodType !== e.target.id))
     }
   };
+
+  const values = []
+
+  const searchHandler = (e) => {
+    Obj.map(item => {
+      if(item.title.toLowerCase().includes(e.target.value.toLowerCase())){
+        values.push(item)
+      }
+    })
+    setContent(values)
+  }
   return (
     <div className='category'>
       <div className='category__inner'>
@@ -25,7 +36,7 @@ function Category({ Obj, setContent }) {
         </div>
         <div className='category__search'>
           <i className='bx bx-search category__icon'></i>
-          <input className='category__input' type="search" placeholder='Search for food, coffe, etc..' />
+          <input onChange={searchHandler} className='category__input' type="search" placeholder='Search for food, coffe, etc..' />
         </div>
       </div>
       <ul className='category__list'>

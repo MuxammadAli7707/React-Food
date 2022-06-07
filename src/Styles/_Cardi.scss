@@ -20,9 +20,8 @@
   &__list {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 70px;
+    margin-top: 50px;
     padding-top: 40px;
     height: 450px;
     overflow-y: scroll;
@@ -35,6 +34,7 @@
     border-radius: 16px;
     text-align: center;
     margin-bottom: 60px;
+    margin-right: 18px;
   }
 
   &__img {

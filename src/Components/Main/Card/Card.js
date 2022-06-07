@@ -18,9 +18,13 @@ function Card({
     };
 
   let foodAdd = (el) => {
-    if (wishlist.indexOf(el) !== -1) 
-    return
-    setWishlist([...wishlist, el])
+    let tempTwo = wishlist.filter((item) => item.id == el.id);
+    el.num = tempTwo.length + 1;
+
+    setWishlist([...wishlist, el]);
+    // if (wishlist.indexOf(el) !== -1) 
+    // return
+    // setWishlist([...wishlist, el])
   }
 
   return (
