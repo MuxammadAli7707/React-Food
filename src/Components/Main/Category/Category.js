@@ -52,15 +52,6 @@ function Category({ Obj, setContent }) {
             </li>
           );
         })}
-        <li className='category__item'>
-          <button className='category__btn'>Grill</button>
-        </li>
-        <li className='category__item'>
-          <button className='category__btn'>Appetizer</button>
-        </li>
-        <li className='category__item'>
-          <button className='category__btn'>Des ert</button>
-        </li>
       </ul>
     </div>
   );

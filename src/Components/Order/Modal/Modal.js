@@ -64,7 +64,7 @@ function Modal({
             <div className='modals__wrap'>
               <div className='modals__wrapper'>
                 <label htmlFor='date' className='modals__naming'>Expiration Date</label>
-                <input className='modals__input' id='date' type="date" />
+                <input className='modals__input' id='date' type="month" />
               </div>
               <div className='modals__wrapper'>
                 <label htmlFor='cvv' className='modals__naming'>CVV</label>

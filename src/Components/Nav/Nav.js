@@ -9,6 +9,8 @@ import settings from '../../assets/Image/settings.svg';
 import enter from '../../assets/Image/enter-icon.svg';
 import logos from '../../assets/Image/logo-home.svg';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightArrowLeft, faArrowRightFromBracket, faBell, faChartPie, faCompass, faEnvelope, faFile, faGear, faHouse } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
   return (
@@ -21,38 +23,38 @@ function Nav() {
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={home} alt="home-icon" />
+            <NavLink to='/' className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faHouse} />
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={menu} alt="home-icon" />
+            <NavLink to='notifi' className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faCompass} />
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={contacts} alt="home-icon" />
+            <NavLink to='pie' className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faChartPie} />
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={message} alt="home-icon" />
+            <NavLink to='message' className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faEnvelope} />
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={bell} alt="home-icon" />
+            <NavLink to='bell' className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faBell} />
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={settings} alt="home-icon" />
+            <NavLink to='/setting'className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faGear} />
             </NavLink>
           </li>
           <li className='nav__item'>
-            <NavLink to='/' className='nav__link'>
-              <img className='nav__img' src={enter} alt="home-icon" />
+            <NavLink to='/login' className={({isActive}) => (isActive ? "navBar__link navBar__active" : "navBar__link")}>
+              <FontAwesomeIcon className="nav__icon" icon={faArrowRightFromBracket} />
             </NavLink>
           </li>
         </ul>

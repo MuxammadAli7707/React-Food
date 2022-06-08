@@ -4,10 +4,8 @@ import Main from '../Main/Main';
 import Nav from '../Nav/Nav';
 import Order from '../Order/Order';
 
-function Home() {
-  let [Obj, setObj] = useState(Foods)
-  let [content, setContent] = useState(Obj) 
-  let [wishlist, setWishlist] = useState([])
+function Home({wishlist, setWishlist, content, setContent, Obj}) {
+
   
   return (
     <>

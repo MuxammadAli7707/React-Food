@@ -1,0 +1,73 @@
+.add-modal{
+  width: 45vw;
+  height: 78vh;
+  background-color: #1f1d2b;
+  z-index: 222;
+  position: absolute;
+  top: 10%;
+  left: 26%;
+  transform: translateY(-1000px);
+  box-shadow: rgb(0 0 0 / 15%) 0px 4px 12px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.8s ease;
+ 
+
+  input{
+    background-color: #393C49;
+    border: none;
+    color: #fff;
+    width: 70%;
+    height: 50px;
+    border-radius: 8px;
+    padding-left: 15px;
+    
+    &::placeholder{
+      color: #abbbc2c7;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+}
+.backdrop-add{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.56);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.add-modal-btns {
+  position: absolute;
+  bottom: 20px;
+
+  button{
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 1px solid #EA7C69;
+    border-radius: 8px;
+    color: #EA7C69;
+    transition: all 0.3s ease;
+
+    &:hover{
+      background: #EA7C69;
+      box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
+      color: #fff;
+    }
+  }
+}
+.blockingg {
+  display: block;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+  opacity: 1;
+}
+
+.nonesingg {
+  display: block;
+  transform: translateY(-1000px);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
